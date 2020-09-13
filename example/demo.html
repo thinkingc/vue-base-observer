@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-simple</title>
+</head>
+<body>
+  <div id="app">
+    <p>111{{msg + '---'}}222</p>
+    <p v-text="msg"></p>
+    <input v-model="msg" />
+    <button @click="handleClick">事件按钮</button>
+  </div>
+
+  <script src="../dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data () {
+        return {
+          msg: 'hello world',
+          name: 'msg'
+        }
+      },
+      methods: {
+        handleClick() {
+          console.log('handleclick', this.msg)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
